@@ -13,8 +13,8 @@ export default function CartButton() {
   if (!count || path === "/cart" || path === "/checkout") return null;
   const total = lines.reduce((s, l) => s + lineUnitCents(l) * l.quantity, 0);
   return (
-    <Link href="/cart" className="fixed bottom-4 right-4 z-40 rounded-full bg-ember px-6 py-3 font-semibold text-ink shadow-[0_10px_30px_-5px_rgba(255,90,31,0.6)]" aria-label={`Open cart, ${count} items`}>
-      Cart · {count} · {money(total)}
+    <Link href="/cart" className="fixed bottom-4 right-4 z-40 rounded-full bg-ember px-5 py-3 font-semibold text-ink shadow-[0_10px_30px_-5px_rgba(255,90,31,0.6)]" aria-label={`Open cart, ${count} items`}>
+      Cart · {count}<span className="hidden sm:inline"> · {money(total)}</span>
     </Link>
   );
 }
